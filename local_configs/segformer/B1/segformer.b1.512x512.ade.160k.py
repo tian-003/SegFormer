@@ -7,10 +7,11 @@ _base_ = [
 
 # model settings
 norm_cfg = dict(type='SyncBN', requires_grad=True)
+# dict(type='SyncBN', requires_grad=True)
 find_unused_parameters = True
 model = dict(
     type='EncoderDecoder',
-    pretrained='pretrained/mit_b1.pth',
+    pretrained='/mnt/sdd/yd2tb/SegFormer/pretrained/mit_b1.pth',
     backbone=dict(
         type='mit_b1',
         style='pytorch'),

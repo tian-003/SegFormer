@@ -18,7 +18,7 @@ from mmseg.utils import collect_env, get_root_logger
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a segmentor')
-    parser.add_argument('config', help='train config file path')
+    parser.add_argument('--config', default='/mnt/sdd/yd2tb/SegFormer/local_configs/segformer/B1/segformer.b1.512x512.ade.160k.py',help='train config file path')
     parser.add_argument('--work-dir', help='the dir to save logs and models')
     parser.add_argument(
         '--load-from', help='the checkpoint file to load weights from')
@@ -36,7 +36,7 @@ def parse_args():
         '(only applicable to non-distributed training)')
     group_gpus.add_argument(
         '--gpu-ids',
-        type=int,
+        type=int,default=[7],
         nargs='+',
         help='ids of gpus to use '
         '(only applicable to non-distributed training)')
